@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RFormsComponent } from './rforms/rforms.component';
+import { FilterPipe } from './shared-module/filter.pipe';
+import { SharedModuleModule } from './shared-module/shared-module.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,11 @@ import { RFormsComponent } from './rforms/rforms.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModuleModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [FilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

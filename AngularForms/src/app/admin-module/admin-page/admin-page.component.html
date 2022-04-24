@@ -1,1 +1,12 @@
 <p>admin-page works!</p>
+
+    <div *ngFor="let i of item;" >
+        <ng-container *ngIf="i<20" > 
+         <span *appColorChanger="i">{{i}}  {{i | filter }} </span> 
+        </ng-container>
+        
+        </div>
+       from child: {{message}}
+       Outputchildmessage:{{message2}}
+<app-admin-users [childmessage]="parentmessage" (messageEvent)="recdMessage($event)"></app-admin-users>
+

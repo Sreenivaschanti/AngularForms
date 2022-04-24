@@ -1,8 +1,38 @@
-<!-- <form novalidate
+<form novalidate
       (ngSubmit)="submitForm(signupForm)"
-      #signupForm="ngForm"> -->
-    <!-- <input type="text" id="firstName" #firstName="ngModel"  name="FirstName" > -->
-    <!-- <input [(ngModel)]="firstName" > -->
-    <p>Rforms component</p>
- <!-- </form>
-       -->
+      #signupForm="ngForm"> 
+     <input type="text" id="firstName" name="firstName"  [(ngModel)]="model.firstName" #firstName='ngModel' >
+     {{firstName.value | json}}
+    <!-- <span *ngIf="firstName">please enter firstName</span> -->
+<div>
+   <strong>Valid ? </strong>{{firstName.valid}} <br>
+   <strong>Invalid ? </strong>{{firstName.invalid}}<br>
+   <strong>Touched ? </strong>{{firstName.touched}}<br>
+   <strong>Untouched ? </strong>{{firstName.untouched}}<br>
+   <strong>Dirty ? </strong>{{firstName.dirty}}<br>
+   <strong>Pristine ? </strong>{{firstName.pristine}}<br>
+</div>
+   
+<input type="submit" value="submit" name="submit"/>
+ </form>
+
+       {{signupForm.form.value | json}}
+       <div>
+          <form [formGroup]="myformGroup" >
+            <label for="userName">userName</label>
+             <input text="text" id='userName' name="userName" formControlName="myForm.userName">
+        
+{{myForm.userName}}
+  <!-- <div *ngIf="userName.errors?.required">
+    Name is required.
+  </div>
+  <div *ngIf="userName.errors?.minlength">
+    Name must be at least 4 characters long.
+  </div> -->
+
+             <label for="password">password</label>
+             <input type="text" name="password" id="password" formControlName="password">
+             <input type="submit" value="submit" name="Rsubmit"/>
+          </form>
+       </div>
+       

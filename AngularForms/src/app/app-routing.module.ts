@@ -4,7 +4,8 @@ import { RFormsComponent } from './rforms/rforms.component';
 
 const routes: Routes = [
 {path:'',component:RFormsComponent},
-{path:'admin',loadChildren:()=>import('./admin-module/admin-module.module').then(x=>x.AdminModuleModule)}
+{path:'admin',loadChildren:()=>import('./admin-module/admin-module.module').then(x=>x.AdminModuleModule)},
+{path:'adminUsers',loadChildren:'./admin-module/admin-module.module#AdminUsersComponent'}
 ];
 
 @NgModule({

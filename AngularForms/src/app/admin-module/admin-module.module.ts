@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
-import { FilterPipe } from './filter.pipe';
+import { SharedModuleModule } from '../shared-module/shared-module.module';
+import { ColorChangerDirective } from '../shared-module/color-changer.directive';
 
 const routes: Routes = [  
   {path : '', component :AdminPageComponent},  
+  {path : 'users', component :AdminUsersComponent}
 ];  
     
 
@@ -15,11 +17,12 @@ const routes: Routes = [
   declarations: [
     AdminPageComponent,
     AdminUsersComponent,
-    FilterPipe
+    //ColorChangerDirective  
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)  
+    RouterModule.forChild(routes),
+    SharedModuleModule  
   ],
   exports: [RouterModule]  
 })
