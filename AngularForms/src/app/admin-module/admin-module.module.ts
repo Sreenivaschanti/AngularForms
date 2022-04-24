@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { FilterPipe } from './filter.pipe';
 
 const routes: Routes = [  
   {path : '', component :AdminPageComponent},  
@@ -13,7 +14,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AdminPageComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
